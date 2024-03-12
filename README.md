@@ -34,4 +34,4 @@ Assurez-vous de consulter la documentation officielle de Pygame pour obtenir des
 
 Pour toutes questions, problèmes ou suggestions, veuillez ouvrir une issue dans le référentiel GitHub ci-dessous :
 
-https://github.com/franckronaldsipa/HID-Souris
+https://github.com/franckronaldsipa/HID-detection-Souris
