@@ -1,0 +1,115 @@
+\documentclass[a4paper, 12px]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{tocloft}
+\usepackage[french]{babel}
+
+
+\geometry{a4paper, margin=2cm}
+
+
+\begin{document}
+\definecolor{myblue}{RGB}{0, 102, 204}
+\newtcolorbox{mybox}{
+    colframe=myblue,
+    colback=white,
+    arc=0pt,
+    outer arc=0pt,
+    boxrule=1pt,
+    boxsep=0pt,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt
+}
+
+\begin{center}
+\Huge  {\bfseries RAPPORT} \\
+
+\begin{mybox}
+\section*{}
+   \bfseries  {\huge THEME : CREATION D'UNE APPLICATION UTILISANT PYGAME POUR AFFICHER EN TEMPS REEL LES DEPLACEMENTS DU CURSEUR DE LA SOURIS.}
+\\
+\end{mybox}
+
+
+\large REALISE PAR : \\
+
+\LARGE SIPA Franck Ronald 22P130\\
+
+\end{center}
+
+
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{INTRODUCTION}
+
+\par Dans ce rapport, nous allons présenter un projet portant sur la création d'une application utilisant Pygame pour afficher en temps réel les déplacements de la souris. L'objectif de ce projet était de développer une interface interactive permettant de visualiser en temps réel les interactions d’un utilisateur avec la souris. Dans ce rapport, nous présenterons tout d'abord une introduction à Pygame en tant que bibliothèque de développement de jeux. Nous expliquerons ensuite la conception de l'application, en décrivant son architecture globale et les différentes étapes de développement. Nous aborderons également l'implémentation de l'application, en présentant le code source et en expliquant les principales fonctionnalités mises en place. Enfin, nous discuterons des résultats obtenus, des difficultés rencontrées et des perspectives d'amélioration de l'application. L'objectif de ce document est de fournir une vue d'ensemble complète de la création de cette application utilisant Pygame, en mettant l'accent sur les aspects clés du développement et des fonctionnalités implémentées.
+
+
+\section{Présentation de Pygame }
+
+
+\subsection{Présentation de Pygame en tant que bibliothèque de développement de jeux}
+Pygame est une bibliothèque de développement de jeux en Python. Elle est open-source et largement documentée, ce qui facilite son utilisation et son apprentissage pour les développeurs Python. Elle offre de nombreuses fonctionnalités, une bonne flexibilité et peut être utilisée pour créer des jeux simples ou plus complexes, ainsi que des applications interactives nécessitant des fonctionnalités graphiques avancées.
+
+\subsection{Principales fonctionnalités de Pygame}
+\par Les principales fonctions de Pygame sont : 
+
+\begin{itemize}
+\item[-] La gestion des fenêtres et des surfaces : Pygame permet de créer des fenêtres graphiques et de manipuler des surfaces pour dessiner des éléments graphiques.
+\item[-] La gestion des événements : Pygame permet de gérer les événements utilisateur tels que les clics de souris et les pressions de touches clavier.
+\item[-] Les rendus graphiques : Pygame offre des fonctions pour dessiner des formes géométriques, des images et du texte à l'écran. 
+\item[-] La gestion des événements et des mouvements de la souris. 
+\item[-] La gestion du son : Pygame permet de charger et de jouer des fichiers audios, offrant ainsi la possibilité d'ajouter des effets sonores et de la musique à un jeu ou une application. 
+\item[-] La gestion de la physique : Bien que Pygame ne soit pas une bibliothèque de physique complète, elle offre des fonctionnalités de base pour détecter les collisions entre des objets et gérer la gravité. 
+\end{itemize}
+
+
+\section{Conception de l'application}
+
+\par L'architecture globale de l'application se compose de plusieurs étapes de développement. Tout d'abord, il faut initialiser Pygame et créer une fenêtre graphique. Ensuite, il faut gérer les événements de la souris pour détecter les clics et les relâchements. Lorsqu'un clic est détecté, les coordonnées du point de départ sont enregistrées. Lorsque le relâchement est détecté, les coordonnées du point d'arrivée sont enregistrées et une ligne est dessinée entre les deux points. 
+
+\section{Implémentation de l'application}
+
+
+\subsection{Présentation du code source}
+\begin{center}
+\includegraphics[scale=0.6]{Capture d'écran 2024-03-10 130815.png}
+\includegraphics[scale=0.6]{Capture d'écran 2024-03-10 130834.png}
+\end{center}
+
+Le code source de l'application utilise la bibliothèque Pygame pour créer une fenêtre graphique et gérer les événements de la souris. Les principales fonctionnalités implémentées sont la détection des clics et des relâchements de la souris, l'enregistrement des coordonnées des points de départ et d'arrivée, et le dessin d'une ligne entre les deux points. 
+
+\subsection{Explications}
+Dans la boucle principale de l'application, nous utilisons la fonction "pygame.event.get()" pour récupérer tous les événements survenus depuis la dernière itération de la boucle. Nous vérifions ensuite si l'événement est de type MOUSEBUTTONDOWN, ce qui indique qu'un a été pressée. Nous récupérons alors les coordonnées du point de départ à l'aide de "event.key" et son nom correspondant en utilisant "pygame.mouse.get-pos()". Ensuite nous vérifions si l’évènement est de type MOUSEBUTTONUP ce qui signifie que le clic a été relâché. Dans ce cas on récupère la position du point d’arriver toujours grâce à la commande "pygame.mouse.get-pos()". \\
+Enfin, nous traçons un trait liant le point de départ au point d’arriver ceci grâce à la commande "pygame.draw.line(window, (255, 255, 255), previou-mouse-pos, current-mouse-pos)" qui prend en argument la position de départ de la souris et celle d’arriver. \\
+Une fois le clic relâché, un message informe l’utilisateur des directions prise par le curseur (le curseur a été déplacé vers la gauche, la droite, le bas ou le haut) et ceci es temps réel.
+
+
+\section{Résultats et fonctionnalités }
+\par L'interface utilisateur de l'application est simple et intuitive. L'utilisateur peut cliquer et relâcher la souris pour dessiner une ligne à l'écran.\\
+La démonstration des fonctionnalités clés de l'application montre la fluidité du dessin de la ligne en temps réel. L'utilisateur peut dessiner des lignes de différentes longueurs et formes en utilisant la souris. \\
+\begin{center}
+\includegraphics[scale=0.5]{Capture d'écran 2024-03-10 134008.png}
+\end{center}
+
+\section{Difficultés rencontrées}
+Lors du développement de l'application, plusieurs problèmes techniques ont été rencontrés. Par exemple, la gestion des événements de la souris qui peut être complexe ; il a fallu trouver des solutions pour détecter les clics et les relâchements de la souris.\\
+Les solutions adoptées pour résoudre ces problèmes ont été de consulter la documentation de Pygame, de rechercher des exemples de code et de faire des tests et des ajustements pour obtenir le comportement souhaité de l'application.
+
+\section{CONCLUSION}
+En conclusion, ce projet Pygame permet à l'utilisateur de dessiner une ligne avec la souris en cliquant et relâchant les boutons de la souris. L'application offre une interface utilisateur simple et intuitive, et les fonctionnalités clés ont été implémentées avec succès. Malgré quelques difficultés techniques, des solutions ont été trouvées pour résoudre les problèmes rencontrés. Ce projet peut être amélioré et approfondi en ajoutant des fonctionnalités supplémentaires, telles que la possibilité de dessiner des formes plus complexes ou d'ajouter des couleurs à la ligne dessinée et plus encore.
+
+
+\end{document}
