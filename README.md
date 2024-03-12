@@ -32,4 +32,5 @@ Ce projet est basé sur l'utilisation de la bibliothèque Pygame pour la créati
 
 Assurez-vous de consulter la documentation officielle de Pygame pour obtenir des informations détaillées sur l'utilisation de la bibliothèque et pour explorer les fonctionnalités avancées.
 
-Pour toutes questions, problèmes ou suggestions, veuillez ouvrir une issue dans le référentiel GitHub du rapport.
+Pour toutes questions, problèmes ou suggestions, veuillez ouvrir une issue dans le référentiel GitHub ci-dessous :
+https://github.com/franckronaldsipa/HID-Souris
